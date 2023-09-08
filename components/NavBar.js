@@ -14,9 +14,6 @@ export default function NavBar() {
         </span>
       </Link>
       <style jsx>{`
-        nav {
-          background-color: tomato;
-        }
         ${Link} {
           text-decoration: none;
         }
@@ -24,7 +21,7 @@ export default function NavBar() {
           cursor: pointer;
         }
         .active {
-          color: yellow;
+          color: tomato;
         }
       `}</style>
     </nav>
