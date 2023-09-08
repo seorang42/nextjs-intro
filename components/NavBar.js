@@ -5,23 +5,43 @@ export default function NavBar() {
   const router = useRouter();
   return (
     <nav>
-      <Link legacyBehavior href="/">
-        <span className={router.pathname === "/" ? "active" : ""}>Home</span>
-      </Link>
-      <Link legacyBehavior href="/about">
-        <span className={router.pathname === "/about" ? "active" : ""}>
+      <img src="/vercel.svg" />
+      <div>
+        <Link href="/" className={router.pathname === "/" ? "active" : ""}>
+          Home
+        </Link>
+        <Link
+          href="/about"
+          className={router.pathname === "/about" ? "active" : ""}
+        >
           About
-        </span>
-      </Link>
+        </Link>
+      </div>
       <style jsx>{`
-        ${Link} {
-          text-decoration: none;
+        nav {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          box-shadow: rgba(50, 50, 92, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         }
-        span {
-          cursor: pointer;
+        img {
+          max-width: 100px;
+          margin-bottom: 5px;
+        }
+        nav > a {
+          font-weight: 600;
+          font-size: 18px;
         }
         .active {
           color: tomato;
+        }
+        nav > div {
+          display: flex;
+          gap: 10px;
         }
       `}</style>
     </nav>
